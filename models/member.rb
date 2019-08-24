@@ -18,6 +18,12 @@ class Member
     @id = results[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM members"
+    results = SqlRunner.run(sql)
+    return results.map { |member| Member.new(member) }
+  end
+
   def update()
     sql = "UPDATE members SET (first_name, last_name) = ($1, $2) WHERE id = $3"
     values = [@first_name, @last_name, @id]

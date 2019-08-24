@@ -19,6 +19,12 @@ class GymClass
     @id = results[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM gym_classes"
+    results = SqlRunner.run(sql)
+    return results.map { |gym_class| GymClass.new(gym_class) }
+  end
+
   def update()
     sql = "UPDATE gym_classes SET (name, capacity, time_slot) =($1, $2, $3) WHERE id = $4"
     values = [@name, @capacity, @time_slot, @id]
