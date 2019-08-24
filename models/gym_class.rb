@@ -19,4 +19,10 @@ class GymClass
     @id = results[0]['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE gym_classes SET (name, capacity, time_slot) =($1, $2, $3) WHERE id = $4"
+    values = [@name, @capacity, @time_slot, @id]
+    SqlRunner.run(sql, values)
+  end
+  
 end
