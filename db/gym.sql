@@ -1,11 +1,11 @@
 DROP TABLE bookings;
-DROP TABLE classes;
+DROP TABLE gym_classes;
 DROP TABLE members;
 
-CREATE TABLE classes(
+CREATE TABLE gym_classes(
   id SERIAL8 primary key,
-  name VARCHAR(255) not null,
-  capacity INT4,
+  name VARCHAR(255),
+  capacity INT2,
   time_slot VARCHAR(255)
 );
 
@@ -17,6 +17,6 @@ CREATE TABLE members(
 
 CREATE TABLE bookings(
   id SERIAL8 primary key,
-  class_id INT8 references classes(id),
+  gym_class_id INT8 references gym_classes(id),
   member_id INT8 references members(id)
 );
