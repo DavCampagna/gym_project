@@ -19,16 +19,16 @@ class GymClass
     @id = results[0]['id'].to_i
   end
 
-  def self.all()
-    sql = "SELECT * FROM gym_classes"
-    results = SqlRunner.run(sql)
-    return results.map { |gym_class| GymClass.new(gym_class) }
-  end
-
   def update()
     sql = "UPDATE gym_classes SET (name, capacity, time_slot) =($1, $2, $3) WHERE id = $4"
     values = [@name, @capacity, @time_slot, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM gym_classes"
+    results = SqlRunner.run(sql)
+    return results.map { |gym_class| GymClass.new(gym_class) }
   end
 
   def self.delete_all
@@ -42,18 +42,20 @@ class GymClass
     SqlRunner.run(sql, values)
   end
 
-  def members
-  sql = "SELECT member.* FROM members member INNER JOIN bookings booking ON booking.member_id = member.id WHERE booking.gym_class_id = $1;"
-  values = [@id]
-  results = SqlRunner.run(sql, values)
-  return results.map { |member| Member.new(member) }
-  end
-
   def self.find(id)
     sql = "SELECT * FROM gym_classes WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return GymClass.new(results[0])
   end
+
+  def members
+    sql = "SELECT member.* FROM members member INNER JOIN bookings booking ON booking.member_id = member.id WHERE booking.gym_class_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |member| Member.new(member) }
+  end
+
+
 
 end

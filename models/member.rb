@@ -18,16 +18,16 @@ class Member
     @id = results[0]['id'].to_i
   end
 
-  def self.all()
-    sql = "SELECT * FROM members"
-    results = SqlRunner.run(sql)
-    return results.map { |member| Member.new(member) }
-  end
-
   def update()
     sql = "UPDATE members SET (first_name, last_name) = ($1, $2) WHERE id = $3"
     values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM members"
+    results = SqlRunner.run(sql)
+    return results.map { |member| Member.new(member) }
   end
 
   def self.delete_all
@@ -49,10 +49,10 @@ class Member
   end
 
   def gym_classes
-  sql = "SELECT gym_class.* FROM gym_classes gym_class INNER JOIN bookings booking ON booking.gym_class_id = gym_class.id WHERE booking.member_id = $1;"
-  values = [@id]
-  results = SqlRunner.run(sql, values)
-  return results.map { |gym_class| GymClass.new(gym_class) }
+    sql = "SELECT gym_class.* FROM gym_classes gym_class INNER JOIN bookings booking ON booking.gym_class_id = gym_class.id WHERE booking.member_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |gym_class| GymClass.new(gym_class) }
   end
 
   def format_name
