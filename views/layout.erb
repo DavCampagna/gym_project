@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+<!-- remember to change the title later -->
     <title>Gym</title>
   </head>
   <body>
-    <section id="content">
-      <%= yield %>
-    </section>
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="/gym_classes">Classes</a>
+          </li>
+          <li>
+            <a href="/members">Members</a>
+          </li>
+          <li>
+            <a href="/bookings">Bookings</a>
+          </li>
+        </ul>
+      </nav>
+      <section id="content">
+        <%= yield %>
+      </section>
+    </main>
   </body>
 </html>
