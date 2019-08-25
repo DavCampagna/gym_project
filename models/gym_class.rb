@@ -49,4 +49,11 @@ class GymClass
   return results.map { |member| Member.new(member) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM gym_classes WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return GymClass.new(results[0])
+  end
+
 end

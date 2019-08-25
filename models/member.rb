@@ -41,6 +41,13 @@ class Member
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM members WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Member.new(results[0])
+  end
+
   def gym_classes
   sql = "SELECT gym_class.* FROM gym_classes gym_class INNER JOIN bookings booking ON booking.gym_class_id = gym_class.id WHERE booking.member_id = $1;"
   values = [@id]
@@ -50,6 +57,6 @@ class Member
 
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
-  end 
+  end
 
 end
