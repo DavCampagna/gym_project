@@ -1,0 +1,14 @@
+<h1>Members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Trainer</th>
+    <th>Program</th>
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><a href="/members/<%= member.id %>"><%= member.first_name %></a></td>
+  </tr>
+  <% end %>
+</table>
