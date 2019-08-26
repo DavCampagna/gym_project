@@ -15,9 +15,18 @@ get "/members/new" do
   erb(:"members/new")
 end
 
+# maybe change the name for the route above
+
 get "/members/edit" do
   @members = Member.all()
   erb(:"members/edit_menu")
+end
+
+# maybe change the name for the route above
+
+get "/members/delete" do
+  @members = Member.all()
+  erb(:"members/delete_menu")
 end
 
 get "/members/:id" do
@@ -45,8 +54,4 @@ post "/members/:id/delete" do
   @member = Member.find(params[:id])
   Member.delete(params[:id])
   redirect to "/members"
-end
-
-get "/members/editmenu" do
-  erb(:"members/edit_menu")
 end
