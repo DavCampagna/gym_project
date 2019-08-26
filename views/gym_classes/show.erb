@@ -1,0 +1,17 @@
+<h1>Class Details</h1>
+
+<ul>
+  <li>Name: <%= @gym_class.name %> </li>
+</ul>
+
+<form method="post" action="/gym_classes/<%= @gym_class.id %>/delete">
+  <input type="submit" value="Delete Class"/>
+</form>
+
+<form method="get" action="/gym_classes/<%= @gym_class.id %>/edit">
+  <input type="submit" value="Edit Class"/>
+</form>
+
+<form method="get" action="/home" >
+  <input type="submit" value="Home">
+</form>

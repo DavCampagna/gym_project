@@ -20,3 +20,26 @@ post "/gym_classes" do
   @gym_class.save
   erb(:"gym_classes/create")
 end
+
+# the above finds the gym_class id, I should use it later
+
+get "/gym_classes/:id" do
+  @gym_class = GymClass.find(params[:id])
+  erb(:"gym_classes/show")
+end
+
+get "/gym_classes/:id/edit" do
+  @gym_class = GymClass.find(params[:id])
+  erb(:"gym_classes/edit")
+end
+
+post "/gym_classes/:id" do
+  GymClass.new(params).update
+  redirect to "/gym_classes"
+end
+
+post "/gym_classes/:id/delete" do
+  @gym_class = GymClass.find(params[:id])
+  GymClass.delete(params[:id])
+  redirect to "/gym_classes"
+end
