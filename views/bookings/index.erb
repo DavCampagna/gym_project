@@ -8,7 +8,7 @@
   <% for booking in @bookings %>
   <tr>
     <td><a href="/bookings/<%= booking.id %>"><%= booking.member.format_name %></a></td>
-    <td><a href="/bookings/<%= booking.id %>"><%= booking.member.gym_classes%></a></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.gym_class.name %></a></td>
   </tr>
   <% end %>
 </table>
