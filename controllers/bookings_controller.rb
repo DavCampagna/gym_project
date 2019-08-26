@@ -10,3 +10,24 @@ get "/bookings" do
   @bookings = Booking.all()
   erb(:"bookings/index")
 end
+
+get "/bookings/:id" do
+  @booking = Booking.find(params[:id])
+  erb(:"bookings/show")
+end
+
+get "/bookings/:id/edit" do
+  @booking = Booking.find(params[:id])
+  erb(:"bookings/edit")
+end
+
+post "/bookings/:id" do
+  Booking.new(params).update
+  redirect to "/bookings"
+end
+
+post "/bookings/:id/delete" do
+  @booking = Booking.find(params[:id])
+  Booking.delete(params[:id])
+  redirect to "/bookings"
+end

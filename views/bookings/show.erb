@@ -1,0 +1,17 @@
+<h1>Booking Details</h1>
+
+<ul>
+  <li>Member: <%= @booking.member.format_name %> </li>
+</ul>
+
+<form method="post" action="/bookings/<%= @booking.id %>/delete">
+  <input type="submit" value="Delete Booking"/>
+</form>
+
+<form method="get" action="/bookings/<%= @booking.id %>/edit">
+  <input type="submit" value="Edit Booking"/>
+</form>
+
+<form method="get" action="/home" >
+  <input type="submit" value="Home">
+</form>

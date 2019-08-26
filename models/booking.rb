@@ -34,6 +34,15 @@ class Booking
     SqlRunner.run(sql, values)
   end
 
+# added later, test it
+  def self.find(id)
+    sql = "SELECT * FROM bookings WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Booking.new(results[0])
+  end  
+#######
+
   def member()
     sql = "SELECT * FROM members WHERE id = $1"
     values = [@member_id]
