@@ -1,8 +1,8 @@
 body {
-  background: black url('/images/background.jpg');
+  background: white url('/images/background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color: white;
+  color: orange;
   font-family: 'Inconsolata', serif;
   padding: 0px;
   margin: 0px;
@@ -10,6 +10,11 @@ body {
 
 h1 {
   font-size: 3em;
-  color: white;
+  color: orange;
   margin-bottom: 20px;
+}
+
+#content {
+  padding-left: 50px;
+  padding-top:20px;
 }
