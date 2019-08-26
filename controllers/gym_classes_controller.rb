@@ -10,3 +10,13 @@ get "/gym_classes" do
   @gym_classes = GymClass.all()
   erb(:"gym_classes/index")
 end
+
+get "/gym_classes/new" do
+  erb(:"gym_classes/new")
+end
+
+post "/gym_classes" do
+  @gym_class = GymClass.new(params)
+  @gym_class.save
+  erb(:"gym_classes/create")
+end
