@@ -25,3 +25,9 @@ post "/members" do
   @member.save
   erb(:"members/create")
 end
+
+post "/members/:id/delete" do
+  @member = Member.find(params[:id])
+  Member.delete(params[:id])
+  redirect to "/members"
+end
