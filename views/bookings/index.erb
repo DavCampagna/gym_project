@@ -1,1 +1,23 @@
 <h1>Bookings</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Booked Classes</th>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.member.format_name %></a></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.member.gym_classes%></a></td>
+  </tr>
+  <% end %>
+</table>
+
+<nav>
+    <ul>
+    <li><a href="/bookings/new">Add a Booking</a></li>
+    <!-- <li><a href="/bookings/edit">Edit Classes</a></li> -->
+    <!-- <li><a href="/bookings/delete">Delete Classes</a></li> -->
+    <li><a href="/home">Home</a></li>
+  </ul>
+</nav>
