@@ -15,6 +15,11 @@ get "/members/new" do
   erb(:"members/new")
 end
 
+get "/members/edit" do
+  @members = Member.all()
+  erb(:"members/edit_menu")
+end
+
 get "/members/:id" do
   @member = Member.find(params['id'].to_i)
   erb(:"members/show")
