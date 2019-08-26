@@ -41,3 +41,7 @@ post "/members/:id/delete" do
   Member.delete(params[:id])
   redirect to "/members"
 end
+
+get "/members/editmenu" do
+  erb(:"members/edit_menu")
+end
