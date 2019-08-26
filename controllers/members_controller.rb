@@ -36,7 +36,7 @@ end
 ############################################
 
 get "/members/:id" do
-  @member = Member.find(params['id'].to_i)
+  @member = Member.find(params[:id])
   erb(:"members/show")
 end
 
