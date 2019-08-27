@@ -1,8 +1,25 @@
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 body {
   background: white url('/images/background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color: orange;
+  color: maroon;
   font-family: 'Inconsolata', serif;
   padding: 0px;
   margin: 0px;
@@ -19,6 +36,13 @@ h1 {
   margin-bottom: 20px;
 }
 
+ul {
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+  list-style-type: none;
+}
+
 a, a:link, a:visited {
   color: brown;
   text-decoration: none;
@@ -29,10 +53,11 @@ a:hover, a:active, a:focus {
 }
 
 #menu {
+  font-size: 4em;
   width: 220px;
 }
 
 #content {
-  padding-left: 90px;
-  padding-top:50px;
+  padding-left: 50px;
+  padding-top:30px;
 }

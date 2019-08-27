@@ -17,21 +17,6 @@
   <% end %>
 </table>
 
-<h1>Classes by Member</h1>
-
-<table>
-  <tr>
-    <th>Member</th>
-    <th>Booked Classes</th>
-  </tr>
-  <% for member in @members %>
-  <tr>
-    <td><a href="/members/<%= member.id %>"><%= member.format_name %></a></td>
-    <td><a href="/gym_classes/<%= member.id %>"><% member.gym_classes.each do |gym_class| %><%=gym_class.name%><% end %></a></td>
-  </tr>
-  <% end %>
-</table>
-
 <nav>
     <ul>
     <li><a href="/bookings/new">Add a Booking</a></li>

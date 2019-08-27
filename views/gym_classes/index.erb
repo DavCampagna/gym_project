@@ -4,11 +4,13 @@
   <tr>
     <th>Name</th>
     <th>Time</th>
-    <th>Description</th>
+    <th>Capacity</th>
   </tr>
   <% for gym_class in @gym_classes %>
   <tr>
     <td><a href="/gym_classes/<%= gym_class.id %>"><%= gym_class.name %></a></td>
+    <td><%= gym_class.time_slot %></td>
+    <td><%= gym_class.capacity %></td>
   </tr>
   <% end %>
 </table>
@@ -16,8 +18,8 @@
 <nav>
     <ul>
     <li><a href="/gym_classes/new">Add Classes</a></li>
-    <li><a href="/members/edit">Edit Classes</a></li>
-    <li><a href="/members/delete">Delete Classes</a></li>
+    <!-- <li><a href="/members/edit">Edit Classes</a></li> -->
+    <!-- <li><a href="/members/delete">Delete Classes</a></li> -->
     <li><a href="/home">Home</a></li>
   </ul>
 </nav>
