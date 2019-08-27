@@ -20,7 +20,7 @@ end
 
 post "/bookings" do
   if Booking.already_booked?(params[:member_id], params[:gym_class_id])
-    redirect to "/home"
+  erb(:"bookings/existing_booking")
   else
   booking = Booking.new(params).save
   erb(:"bookings/create")
