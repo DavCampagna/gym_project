@@ -2,6 +2,11 @@
 
 <ul>
   <li>Name: <%= @member.format_name %> </li>
+  <li>Classes:
+    <% @member.gym_classes.each do |gym_class| %>
+    <p><%= gym_class.name %></p>
+    <% end %>
+  </li>
 </ul>
 
 <form method="post" action="/members/<%= @member.id %>/delete">
