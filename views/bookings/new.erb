@@ -1,11 +1,38 @@
-<form method="post" action="/bookings">
-  <label for="member-name-field">Attendee Name:</label>
-  <input type="text" name="<% @booking.member.format_name %>" id="member-name-field"/>
+<!-- <form method="post" action="/bookings">
+  <label for="member-id-field">Member ID:</label>
+  <input type="text" name="member_id" id="member-id-field"/>
 
-  <label for="class-name-field">Class:</label>
-  <input type="text" name="<% @booking.gym_class.name %>" id="class-name-field"/>
+  <label for="class-id-field">Class ID:</label>
+  <input type="text" name="class_id" id="class-id-field"/>
 
   <input type="submit" value="Add Booking">
+</form>
+
+<form method="get" action="/home" >
+  <input type="submit" value="Home">
+</form>
+ -->
+
+
+<form method="post" action="/bookings">
+  <label>
+  Select a Member:
+    <select name="member_id">
+      <% for member in @members %>
+      <option value="<%= member.id %>"><%= member.format_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a Class:
+    <select name="class_id">
+      <% for gym_class in @gym_classes %>
+      <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+      <% end %>
+    </select>
+  </label>
+<input class="" type="submit" value="Add Booking">
 </form>
 
 <form method="get" action="/home" >

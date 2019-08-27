@@ -1,6 +1,9 @@
 <form method="post" action="/bookings/<%= @booking.id %>">
-  <label for="member-name-field">Attendee Name:</label>
-  <input type="text" name="<% @booking.member.format_name %>" id="member-name-field"/>
+  <label for="first-name-field">First Name:</label>
+  <input type="text" name="<% @booking.member.first_name %>" id="first-name-field"/>
+
+  <label for="last-name-field">Last Name:</label>
+  <input type="text" name="<% @booking.member.last_name %>" id="last-name-field"/>
 
   <label for="class-name-field">Class:</label>
   <input type="text" name="<% @booking.gym_class.name %>" id="class-name-field"/>

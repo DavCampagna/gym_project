@@ -8,7 +8,20 @@ also_reload("../models/*")
 
 get "/bookings" do
   @bookings = Booking.all()
+  @members = Member.all()
   erb(:"bookings/index")
+end
+
+get "/bookings/new" do
+  @members = Member.all
+  @gym_classes = GymClass.all
+  erb(:"bookings/new")
+end
+
+post "/bookings" do
+  booking = Booking.new(params)
+  booking.save
+  erb(:"bookings/create")
 end
 
 get "/bookings/:id" do
@@ -26,8 +39,8 @@ post "/bookings/:id" do
   redirect to "/bookings"
 end
 
-post "/bookings/:id/delete" do
-  @booking = Booking.find(params[:id])
-  Booking.delete(params[:id])
-  redirect to "/bookings"
-end
+# post "/bookings/:id/delete" do
+#   @booking = Booking.find(params[:id])
+#   Booking.delete(params[:id])
+#   redirect to "/bookings"
+# end
