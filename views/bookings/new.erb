@@ -14,7 +14,7 @@
  -->
 
 
-<form method="post" action="/bookings">
+<form action="/bookings" method="post">
   <label>
   Select a Member:
     <select name="member_id">
@@ -25,8 +25,8 @@
   </label>
 
   <label>
-    Select a Class:
-    <select name="class_id">
+  Select a Class:
+    <select name="gym_class_id">
       <% for gym_class in @gym_classes %>
       <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
       <% end %>
