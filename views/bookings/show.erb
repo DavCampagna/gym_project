@@ -2,6 +2,7 @@
 
 <ul>
   <li>Member: <%= @booking.member.format_name %> </li>
+  <li>Class: <%= @booking.gym_class.name %></li>
 </ul>
 
 <form method="post" action="/bookings/<%= @booking.id %>/delete">

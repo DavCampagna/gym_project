@@ -19,17 +19,17 @@ get "/bookings/new" do
 end
 
 post "/bookings" do
-  @booking = Booking.new(params)
-  @booking.save
+  booking = Booking.new(params)
+  booking.save
   redirect to("/bookings")
   # erb(:"bookings/create")
 end
 
-# get "/bookings/:id" do
-#   @booking = Booking.find(params[:id])
-#   erb(:"bookings/show")
-# end
-#
+get "/bookings/:id" do
+  @booking = Booking.find(params[:id])
+  erb(:"bookings/show")
+end
+
 # get "/bookings/:id/edit" do
 #   @booking = Booking.find(params[:id])
 #   erb(:"bookings/edit")
