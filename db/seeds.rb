@@ -16,26 +16,56 @@ member1.save
 
 member2 = Member.new({
   "first_name" => "Arnold",
-  "last_name" => "schwarzenegger"
+  "last_name" => "Schwarzenegger"
   })
 
 member2.save
 
+member3 = Member.new({
+  "first_name" => "Mahatma",
+  "last_name" => "Gandhi"
+  })
+
+member3.save
+
+member4 = Member.new({
+  "first_name" => "Elizabeth",
+  "last_name" => "Windsor"
+  })
+
+member4.save
+
 gym_class1 = GymClass.new({
-  "name" => "yoga",
-  "capacity" => 10,
-  "time_slot" => "Midday"
+  "name" => "Yoga",
+  "capacity" => 15,
+  "time_slot" => "8 AM"
   })
 
 gym_class1.save
 
 gym_class2 = GymClass.new({
-  "name" => "kickboxing",
-  "capacity" => 15,
+  "name" => "Kickboxing",
+  "capacity" => 20,
   "time_slot" => "8 PM"
   })
 
 gym_class2.save
+
+gym_class3 = GymClass.new({
+  "name" => "Spin",
+  "capacity" => 16,
+  "time_slot" => "1 PM"
+  })
+
+gym_class3.save
+
+gym_class4 = GymClass.new({
+  "name" => "Body Pump",
+  "capacity" => 25,
+  "time_slot" => "10 AM"
+  })
+
+gym_class4.save
 
 booking1 = Booking.new({
   "gym_class_id" => gym_class1.id,
@@ -50,6 +80,34 @@ booking2 = Booking.new({
   })
 
 booking2.save
+
+booking3 = Booking.new({
+  "gym_class_id" => gym_class4.id,
+  "member_id" => member4.id
+  })
+
+booking3.save
+
+booking4 = Booking.new({
+  "gym_class_id" => gym_class2.id,
+  "member_id" => member1.id
+  })
+
+booking4.save
+
+booking5 = Booking.new({
+  "gym_class_id" => gym_class2.id,
+  "member_id" => member3.id
+  })
+
+booking5.save
+
+booking6 = Booking.new({
+  "gym_class_id" => gym_class4.id,
+  "member_id" => member2.id
+  })
+
+booking6.save
 
 binding.pry
 nil
