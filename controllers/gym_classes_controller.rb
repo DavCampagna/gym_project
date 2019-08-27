@@ -25,6 +25,7 @@ end
 
 get "/gym_classes/:id" do
   @gym_class = GymClass.find(params[:id])
+  @members = Member.all()
   erb(:"gym_classes/show")
 end
 
