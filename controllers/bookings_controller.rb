@@ -40,8 +40,8 @@ end
 #   redirect to "/bookings"
 # end
 
-# post "/bookings/:id/delete" do
-#   @booking = Booking.find(params[:id])
-#   Booking.delete(params[:id])
-#   redirect to "/bookings"
-# end
+post "/bookings/:id/delete" do
+  @booking = Booking.find(params[:id])
+  Booking.delete(params[:id])
+  redirect to "/bookings"
+end
