@@ -8,10 +8,28 @@ body {
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: maroon;
+}
+
 h1 {
   font-size: 3em;
   color: orange;
   margin-bottom: 20px;
+}
+
+a, a:link, a:visited {
+  color: brown;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: orange;
+}
+
+#menu {
+  width: 220px;
 }
 
 #content {
