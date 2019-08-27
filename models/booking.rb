@@ -40,7 +40,7 @@ class Booking
     values = [id]
     results = SqlRunner.run(sql, values)
     return Booking.new(results[0])
-  end  
+  end
 #######
 
   def member()
@@ -55,6 +55,13 @@ class Booking
     values = [@gym_class_id]
     results= SqlRunner.run(sql, values)
     return GymClass.new(results[0])
+  end
+
+  def self.already_booked?(member_id, gym_class_id)
+    sql = "SELECT * FROM bookings WHERE (member_id, gym_class_id) = ($1, $2)"
+    values = [member_id, gym_class_id]
+    no_booking_found = SqlRunner.run(sql, values).first.nil?
+    return !no_booking_found
   end
 
 end

@@ -19,10 +19,12 @@ get "/bookings/new" do
 end
 
 post "/bookings" do
-  booking = Booking.new(params)
-  booking.save
-  redirect to("/bookings")
-  # erb(:"bookings/create")
+  if Booking.already_booked?(params[:member_id], params[:gym_class_id])
+    redirect to "/home"
+  else
+  booking = Booking.new(params).save
+  erb(:"bookings/create")
+  end
 end
 
 get "/bookings/:id" do
