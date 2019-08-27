@@ -9,6 +9,22 @@
   </li>
 </ul>
 
+<!-- alternative way of displaying the information -->
+<!-- <table>
+  <tr>
+    <th>Name</th>
+    <th>Classes</th>
+  </tr>
+  <tr>
+    <td><%= @member.format_name %></td>
+    <td><% @member.gym_classes.each do |gym_class| %>
+    <p><%= gym_class.name %></p>
+    </td>
+  </tr>
+  <% end %>
+</table> -->
+<!-- ####################### -->
+
 <form method="post" action="/members/<%= @member.id %>/delete">
   <input type="submit" value="Delete Member"/>
 </form>
