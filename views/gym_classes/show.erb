@@ -2,6 +2,7 @@
 
 <ul>
   <li>Name: <%= @gym_class.name %> </li>
+  <li>Attendees: <%= @gym_class.members %></li>
 </ul>
 
 <form method="post" action="/gym_classes/<%= @gym_class.id %>/delete">
