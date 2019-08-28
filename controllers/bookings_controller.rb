@@ -20,13 +20,14 @@ end
 
 post "/bookings" do
   gym_class = GymClass.find(params[:gym_class_id])
+
   if Booking.already_booked?(params[:member_id], params[:gym_class_id])
-  erb(:"bookings/existing_booking")
-elsif gym_class.capacity_limit_reached?
-  erb(:"bookings/capacity_reached")
-else
-  booking = Booking.new(params).save
-  erb(:"bookings/create")
+    erb(:"bookings/already_booked")
+  elsif gym_class.capacity_limit_reached?
+    erb(:"bookings/capacity_reached")
+  else
+    booking = Booking.new(params).save
+    erb(:"bookings/create")
   end
 end
 
