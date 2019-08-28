@@ -24,17 +24,19 @@
   font-weight: 700;
   letter-spacing: 8px;
   margin-bottom: 20px;
+  background: white;
   position:relative;
   animation: text 3s 1;
 }
 
 .text2{
   font-size: 30px;
+  color: maroon;
 }
 
 @keyframes text {
   0%{
-    color: black;
+    color: maroon;
     margin-bottom: -40px;
   }
   30%{
@@ -46,9 +48,6 @@
     margin-bottom: -40px;
   }
 }
-
-
-
 
 td, th {
   text-align: left;
