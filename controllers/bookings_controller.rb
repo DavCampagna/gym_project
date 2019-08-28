@@ -23,7 +23,7 @@ post "/bookings" do
   if Booking.already_booked?(params[:member_id], params[:gym_class_id])
   erb(:"bookings/existing_booking")
 elsif gym_class.capacity_limit_reached?
-  erb(:home)
+  erb(:"bookings/capacity_reached")
 else
   booking = Booking.new(params).save
   erb(:"bookings/create")
