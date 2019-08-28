@@ -63,4 +63,8 @@ class GymClass
     return false
   end
 
+  def remaining_capacity()
+    return capacity - members.count
+  end
+
 end

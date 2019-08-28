@@ -1,0 +1,11 @@
+<p><%= @gym_class.members.count %> Members are currently signed for <%= @gym_class.name %></p>
+
+<ul>
+  <li>
+    <% @gym_class.members.each do |member| %>
+    <p><%= member.format_name %></p>
+    <% end %>
+  </li>
+</ul>
+
+<p>There are <%= @gym_class.remaining_capacity %> spaces left </p>
