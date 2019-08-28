@@ -56,6 +56,11 @@ class GymClass
     return results.map { |member| Member.new(member) }
   end
 
-
+  def capacity_limit_reached?()
+    if members.count >= capacity
+      return true
+    end
+    return false
+  end
 
 end
