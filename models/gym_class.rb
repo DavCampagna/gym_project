@@ -60,7 +60,7 @@ class GymClass
     if members.count >= capacity
       return true
     end
-    return false
+      return false
   end
 
   def remaining_capacity()
