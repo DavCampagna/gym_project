@@ -1,0 +1,13 @@
+.home-icon{
+ /* this works, but I want to make it absolute */
+  /* margin-top: 250px;
+  position: relative;
+  left:40%;
+  right:0%;
+  bottom:90%;
+  top:80%; */
+  display:inline-block;
+  position: absolute;
+  margin-top: 250px;
+  left: 43%;
+}
