@@ -1,12 +1,12 @@
 <form method="post" action="/gym_classes/<%= @gym_class.id %>">
   <label for="name-field">Class Name:</label>
-  <input type="text" name="name" id="name-field"/>
+  <input placeholder="<%= @gym_class.name %>" type="text" name="name" id="name-field"/>
 
   <label for="capacity">Capacity:</label>
-  <input type="text" name="capacity" id="capacity"/>
+  <input placeholder="<%= @gym_class.capacity %>"type="text" name="capacity" id="capacity"/>
 
   <label for="time_slot">Time:</label>
-  <input type="text" name="time_slot" id="time-slot"/>
+  <input placeholder="<%= @gym_class.time_slot %>"type="text" name="time_slot" id="time-slot"/>
 
   <input type="submit" value="Edit Class">
 </form>
