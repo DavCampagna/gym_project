@@ -8,15 +8,16 @@ Member.delete_all()
 GymClass.delete_all()
 
 member1 = Member.new({
-  "first_name" => "Lara",
-  "last_name" => "Croft"
+  "first_name" => "Arnold",
+  "last_name" => "Schwarzenegger",
+  "type" => "Premium"
   })
 
 member1.save
 
 member2 = Member.new({
-  "first_name" => "Arnold",
-  "last_name" => "Schwarzenegger",
+  "first_name" => "Lara",
+  "last_name" => "Croft",
   "type" => "Premium"
   })
 
@@ -72,24 +73,24 @@ member8.save
 
 gym_class1 = GymClass.new({
   "name" => "Yoga",
-  "capacity" => 15,
+  "capacity" => 12,
   "time_slot" => "8 AM"
   })
 
 gym_class1.save
 
 gym_class2 = GymClass.new({
-  "name" => "Kickboxing",
-  "capacity" => 20,
-  "time_slot" => "8 PM"
+  "name" => "Spin",
+  "capacity" => 10,
+  "time_slot" => "11 AM"
   })
 
 gym_class2.save
 
 gym_class3 = GymClass.new({
-  "name" => "Spin",
+  "name" => "Karate",
   "capacity" => 16,
-  "time_slot" => "1 PM"
+  "time_slot" => "2 PM"
   })
 
 gym_class3.save
@@ -97,10 +98,18 @@ gym_class3.save
 gym_class4 = GymClass.new({
   "name" => "Body Pump",
   "capacity" => 25,
-  "time_slot" => "10 AM"
+  "time_slot" => "5 PM"
   })
 
 gym_class4.save
+
+gym_class5 = GymClass.new({
+  "name" => "Kickboxing",
+  "capacity" => 20,
+  "time_slot" => "8 PM"
+  })
+
+gym_class5.save
 
 booking1 = Booking.new({
   "gym_class_id" => gym_class1.id,
