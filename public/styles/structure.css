@@ -1,3 +1,29 @@
+.main-titles a:hover, a:active, a:focus {
+  animation: text 3s 1;
+}
+
+#menu {
+  position: relative;
+  font-size: 4em;
+  width: 220px;
+}
+
+#content {
+  padding-left: 50px;
+  padding-top:30px;
+}
+
+.menu-titles {
+  animation: text 3s 1;
+}
+
+.banner {
+  /* font-size: 2em; */
+  text-align: right;
+  padding-right: 200px;
+  animation: text 3s 1;
+}
+
 .home-icon{
  /* this works, but I want to make it absolute */
   /* margin-top: 250px;
@@ -9,7 +35,7 @@
   display:inline-block;
   position: absolute;
   margin-top: 250px;
-  left: 42%;
+  left: 43%;
 }
 
 .home-bg {
@@ -68,23 +94,6 @@ a, a:link, a:visited {
 
 a:hover, a:active, a:focus {
   color: orange;
-}
-
-#menu {
-  font-size: 4em;
-  width: 220px;
-}
-
-#content {
-  padding-left: 50px;
-  padding-top:30px;
-}
-
-.banner {
-  /* font-size: 2em; */
-  text-align: right;
-  padding-right: 200px;
-  animation: text 3s 1;
 }
 
 *{

@@ -1,25 +1,21 @@
-<h1>Members</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% for member in @members %>
-  <tr>
-    <td><a href="/members/<%= member.id %>"><%= member.format_name %></a></td>
-  </tr>
-  <% end %>
-</table>
-
-<nav>
-    <ul>
-    <li><a href="/members/new">Add Members</a></li>
-    <!-- <li><a href="/members/edit">Edit Members</a></li> -->
-    <!-- <li><a href="/members/delete">Delete Members</a></li> -->
-    <li><a href="/home">Home</a></li>
-  </ul>
-</nav>
-
-<form class="home-icon" method="get" action="/home" >
-  <input type="image" src="/images/icon.png" value="Home">
-</form>
+<div class="tables">
+  <h1>Members</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <% for member in @members %>
+    <tr>
+      <td><a href="/members/<%= member.id %>"><%= member.format_name %></a></td>
+    </tr>
+    <% end %>
+  </table>
+  <nav>
+      <ul>
+      <li><a href="/members/new">Add Members</a></li>
+      <!-- <li><a href="/members/edit">Edit Members</a></li> -->
+      <!-- <li><a href="/members/delete">Delete Members</a></li> -->
+      <li><a href="/home">Home</a></li>
+    </ul>
+  </nav>
+</div>
