@@ -16,24 +16,59 @@ member1.save
 
 member2 = Member.new({
   "first_name" => "Arnold",
-  "last_name" => "Schwarzenegger"
+  "last_name" => "Schwarzenegger",
+  "type" => "Premium"
   })
 
 member2.save
 
 member3 = Member.new({
   "first_name" => "Mahatma",
-  "last_name" => "Gandhi"
+  "last_name" => "Gandhi",
+  "type" => "Premium"
   })
 
 member3.save
 
 member4 = Member.new({
   "first_name" => "Elizabeth",
-  "last_name" => "Windsor"
+  "last_name" => "Windsor",
+  "type" => "Premium"
   })
 
 member4.save
+
+member5 = Member.new({
+  "first_name" => "Frida",
+  "last_name" => "Kahlo",
+  "type" => "Standard"
+  })
+
+member5.save
+
+member6 = Member.new({
+  "first_name" => "Tom",
+  "last_name" => "Waits",
+  "type" => "Standard"
+  })
+
+member6.save
+
+member7 = Member.new({
+  "first_name" => "Virginia",
+  "last_name" => "Wolf",
+  "type" => "Standard"
+  })
+
+member7.save
+
+member8 = Member.new({
+  "first_name" => "Chris",
+  "last_name" => "Haining",
+  "type" => "Standard"
+  })
+
+member8.save
 
 gym_class1 = GymClass.new({
   "name" => "Yoga",
