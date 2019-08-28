@@ -1,3 +1,7 @@
+.home-bg {
+background: url(images/white_bg.jpg);
+}
+
 td, th {
   text-align: left;
 }
@@ -78,9 +82,9 @@ a:hover, a:active, a:focus {
 .container{
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   width: 100%;
 }
 
