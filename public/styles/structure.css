@@ -1,3 +1,12 @@
+.home-icon{
+  margin-top: 100px;
+  position: relative;
+  left:40%;
+  right:0%;
+  bottom:90%;
+  top:80%;
+}
+
 .home-bg {
 background: url(images/white_bg.jpg);
 }
