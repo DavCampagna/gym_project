@@ -95,7 +95,7 @@ a:hover, a:active, a:focus {
   margin-bottom: 20px;
   background: white;
   position:relative;
-  animation: text 3s 10;
+  animation: text 3s 1;
 }
 
 .text2{

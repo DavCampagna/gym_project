@@ -2,6 +2,7 @@
 
 <ul>
   <li>Name: <%= @gym_class.name %> </li>
+  <li>Time: <%= @gym_class.time_slot %> </li>
   <li>Attendees:
     <% @gym_class.members.each do |member| %>
     <p><%= member.format_name %></p>
