@@ -3,6 +3,7 @@
 }
 
 #menu {
+  background-image: '/images/background.jpg'
   position: relative;
   font-size: 4em;
   width: 220px;
@@ -94,7 +95,7 @@ a:hover, a:active, a:focus {
   margin-bottom: 20px;
   background: white;
   position:relative;
-  animation: text 3s 1;
+  animation: text 3s 10;
 }
 
 .text2{
